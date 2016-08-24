@@ -8,7 +8,7 @@ namespace GenericList
     public class GenericList<T>
     {
         private T[] items = new T[0];
-        private const int InitialSize = 1;
+        private const int InitialSize = 2;
 
         public int Count { get; private set; }
 
@@ -27,20 +27,22 @@ namespace GenericList
 
         private void CheckCapacity(int size)
         {
-            // Initialize array if empty
-            if (items.Length == 0)
+            do
             {
-                items = new T[InitialSize];
-                return;
-            }
+                // Initialize array if empty
+                if (items.Length == 0)
+                {
+                    items = new T[InitialSize];
+                }
 
-            // Already items in array?
-            if (items.Length <= size - 1)
-            {
-                T[] newItems = new T[Count * 2];
-                Array.Copy(items, newItems, items.Length);
-                items = newItems;
-            }
+                // Already items in array?
+                if (items.Length <= size - 1)
+                {
+                    var newItems = new T[items.Length * 2];
+                    Array.Copy(items, newItems, items.Length);
+                    items = newItems;
+                }
+            } while (items.Length <= size -1);
         }
 
     }
