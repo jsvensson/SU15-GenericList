@@ -21,6 +21,19 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void Slice__Start__End__Handles_Zero_Length()
+        {
+            int[] input = { 1, 2, 3, 4, 5 };
+            int start = 1;
+            int end = 1;
+            int[] expected = { 2 };
+
+            int[] actual = input.Slice(start, end);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void Slice__Start__No_End__Slices_Array()
         {
             int[] input = { 1, 2, 3, 4, 5 };
@@ -30,7 +43,6 @@ namespace UnitTests
             int[] actual = input.Slice(end);
 
             CollectionAssert.AreEqual(expected, actual);
-
         }
     }
 }
