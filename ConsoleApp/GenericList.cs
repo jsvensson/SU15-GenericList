@@ -7,7 +7,7 @@ namespace GenericList
 {
     public class GenericList<T>
     {
-        private T[] items = new T[0];
+        private T[] items;
         private const int InitialSize = 2;
 
         public int Count { get; private set; }
@@ -46,7 +46,7 @@ namespace GenericList
             // Add right slice
             for (int i = 0; i < right.Length - 1; i++)
             {
-                slicedItems[i + index] = right[i];
+                slicedItems[index + i] = right[i];
             }
 
             items = slicedItems;
