@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace GenericList
@@ -18,6 +19,11 @@ namespace GenericList
             }
 
             return slice;
+        }
+
+        public static T[] Slice<T>(this T[] source, int end)
+        {
+            return Slice(source, 0, end);
         }
     }
 }
