@@ -27,6 +27,11 @@ namespace GenericList
 
         public void RemoveAtIndex(int index)
         {
+            if (index >= Count)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             T[] left = items.Slice(0, index - 1);
             T[] right = items.Slice(index + 1, items.Length - 1);
 
