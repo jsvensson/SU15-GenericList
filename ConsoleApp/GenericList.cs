@@ -37,21 +37,18 @@ namespace GenericList
             T[] left = items.Slice(0, index - 1);
             T[] right = items.Slice(index + 1, items.Length-1 - index);
 
-            T[] slicedItems = new T[items.Length - 1];
+            T[] slice = new T[items.Length - 1];
         
             // Add left slice
-            for (int i = 0; i < left.Length; i++)
-            {
-                slicedItems[i] = left[i];
-            }
+            Array.Copy(left, slice, left.Length);
 
             // Add right slice
             for (int i = 0; i < right.Length - 1; i++)
             {
-                slicedItems[index + i] = right[i];
+                slice[index + i] = right[i];
             }
 
-            items = slicedItems;
+            items = slice;
             Count--;
         }
 
