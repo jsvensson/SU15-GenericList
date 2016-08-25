@@ -7,10 +7,11 @@ namespace GenericList
 {
     public class GenericList<T>
     {
-        private T[] items;
+        private T[] items = new T[0];
         private const int InitialSize = 2;
 
         public int Count { get; private set; }
+        public int Capacity => items.Length;
 
         public T this[int index]
         {

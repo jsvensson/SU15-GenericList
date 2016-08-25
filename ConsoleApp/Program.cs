@@ -17,6 +17,7 @@ namespace GenericList
             }
 
             Console.WriteLine($"Number of items in list: {numberList.Count}");
+            Console.WriteLine($"List capacity: {numberList.Capacity}");
             for (int i = 0; i < numberList.Count; i++)
             {
                 Console.WriteLine(numberList[i]);
@@ -26,6 +27,7 @@ namespace GenericList
             numberList.RemoveAtIndex(4);
 
             Console.WriteLine($"Number of items in list: {numberList.Count}");
+            Console.WriteLine($"List capacity: {numberList.Capacity}");
             for (int i = 0; i < numberList.Count; i++)
             {
                 Console.WriteLine(numberList[i]);
