@@ -8,9 +8,9 @@ namespace GenericList
 {
     public static class ArrayExtensions
     {
-        public static T[] Slice<T>(this T[] source, int start, int end)
+        public static T[] Slice<T>(this T[] source, int start, int length)
         {
-            int length = end - start + 1;
+            length = Math.Min(source.Length - 2, length - 1);
             T[] slice = new T[length];
 
             for (int i = 0; i < length; i++)
