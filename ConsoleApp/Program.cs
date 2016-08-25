@@ -9,32 +9,32 @@ namespace GenericList
     {
         public static void Main(string[] args)
         {
-            var numberList = new GenericList<int>();
+            var genericList = new GenericList<int>();
 
             for (int i = 1; i <= 10; i++)
             {
-                numberList.Add(i);
+                genericList.Add(i);
             }
 
-            Console.WriteLine($"Number of items in list: {numberList.Count}");
-            Console.WriteLine($"List capacity: {numberList.Capacity}");
-            for (int i = 0; i < numberList.Count; i++)
+            Console.WriteLine($"Number of items in list: {genericList.Count}");
+            Console.WriteLine($"List capacity: {genericList.Capacity}");
+            for (int i = 0; i < genericList.Count; i++)
             {
-                Console.WriteLine(numberList[i]);
+                Console.WriteLine(genericList[i]);
             }
 
-            Console.WriteLine($"Removing index 4 with value {numberList[4]}");
-            numberList.RemoveAtIndex(4);
+            Console.WriteLine($"Removing index 4 with value {genericList[4]}");
+            genericList.RemoveAtIndex(4);
 
-            Console.WriteLine($"Number of items in list: {numberList.Count}");
-            Console.WriteLine($"List capacity: {numberList.Capacity}");
-            for (int i = 0; i < numberList.Count; i++)
+            Console.WriteLine($"Number of items in list: {genericList.Count}");
+            Console.WriteLine($"List capacity: {genericList.Capacity}");
+            for (int i = 0; i < genericList.Count; i++)
             {
-                Console.WriteLine(numberList[i]);
+                Console.WriteLine(i);
             }
 
             Console.WriteLine("Loop with foreach");
-            foreach (var item in numberList)
+            foreach (var item in genericList)
             {
                 Console.WriteLine(item);
             }
