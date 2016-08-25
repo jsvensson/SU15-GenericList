@@ -8,7 +8,7 @@ namespace GenericList
 {
     public class GenericList<T> : IEnumerable<T>
     {
-        private T[] items = new T[0];
+        private T[] items;
         private const int InitialSize = 2;
 
         public int Count { get; private set; }
@@ -56,8 +56,8 @@ namespace GenericList
         {
             do
             {
-                // Initialize array if empty
-                if (items.Length == 0)
+                // Initialize array
+                if (items == null)
                 {
                     items = new T[InitialSize];
                 }
