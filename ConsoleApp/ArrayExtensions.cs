@@ -20,10 +20,5 @@ namespace GenericList
 
             return slice;
         }
-
-        public static T[] Slice<T>(this T[] source, int end)
-        {
-            return Slice(source, 0, end);
-        }
     }
 }

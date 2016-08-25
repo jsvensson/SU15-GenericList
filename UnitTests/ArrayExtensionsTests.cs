@@ -46,16 +46,5 @@ namespace UnitTests
             CollectionAssert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void Slice__Start__No_End__Slices_Array()
-        {
-            int[] input = { 1, 2, 3, 4, 5 };
-            int length = 2;
-            int[] expected = { 1, 2 };
-
-            int[] actual = input.Slice(length);
-
-            CollectionAssert.AreEqual(expected, actual);
-        }
     }
 }
