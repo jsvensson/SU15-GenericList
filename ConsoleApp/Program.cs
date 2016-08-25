@@ -30,7 +30,7 @@ namespace GenericList
             Console.WriteLine($"List capacity: {genericList.Capacity}");
             for (int i = 0; i < genericList.Count; i++)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(genericList[i]);
             }
 
             Console.WriteLine("Loop with foreach");
