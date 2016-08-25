@@ -33,10 +33,14 @@ namespace GenericList
                 Console.WriteLine(numberList[i]);
             }
 
+            Console.WriteLine("Loop with foreach");
+            foreach (var item in numberList)
+            {
+                Console.WriteLine(item);
+            }
 
             Console.ReadKey();
         }
-
 
     }
 }

@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace GenericList
 {
-    public class GenericList<T>
+    public class GenericList<T> : IEnumerable<T>
     {
         private T[] items = new T[0];
         private const int InitialSize = 2;
@@ -72,6 +73,27 @@ namespace GenericList
                     items = newItems;
                 }
             } while (items.Length <= size -1);
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            int count = 0;
+
+            foreach (T item in items)
+            {
+                if (count >= Count)
+                {
+                    break;
+                }
+
+                count++;
+                yield return item;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
 
     }
