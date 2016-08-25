@@ -34,10 +34,10 @@ namespace GenericList
                 throw new IndexOutOfRangeException();
             }
 
-            T[] left = items.Slice(0, index - 1);
+            T[] left = items.Slice(0, index);
             T[] right = items.Slice(index + 1, items.Length-1 - index);
 
-            T[] slice = new T[items.Length - 1];
+            T[] slice = new T[items.Length];
         
             // Add left slice
             Array.Copy(left, slice, left.Length);
@@ -63,13 +63,13 @@ namespace GenericList
                 }
 
                 // Already items in array?
-                if (items.Length <= size - 1)
+                if (items.Length < size)
                 {
                     var newItems = new T[items.Length * 2];
                     Array.Copy(items, newItems, items.Length);
                     items = newItems;
                 }
-            } while (items.Length <= size -1);
+            } while (items.Length < size);
         }
 
         public IEnumerator<T> GetEnumerator()
