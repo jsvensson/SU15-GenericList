@@ -21,12 +21,12 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Slice__Start__End__Slices_Array()
+        public void Slice__Slices_Array()
         {
             int[] input = {1, 2, 3, 4, 5};
             int start = 1;
-            int length = 2;
-            int[] expected = {2, 3};
+            int length = 3;
+            int[] expected = {2, 3, 4};
 
             int[] actual = input.Slice(start, length);
 
@@ -38,10 +38,10 @@ namespace UnitTests
         {
             int[] input = { 1, 2, 3, 4, 5 };
             int start = 1;
-            int end = 1;
-            int[] expected = { 2 };
+            int length = 0;
+            int[] expected = { };
 
-            int[] actual = input.Slice(start, end);
+            int[] actual = input.Slice(start, length);
 
             CollectionAssert.AreEqual(expected, actual);
         }

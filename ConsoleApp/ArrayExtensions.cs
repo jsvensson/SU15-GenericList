@@ -10,7 +10,8 @@ namespace GenericList
     {
         public static T[] Slice<T>(this T[] source, int start, int length)
         {
-            length = Math.Min(source.Length - 2, length - 1);
+            length = Math.Min(source.Length - 2, length);
+            length = Math.Max(0, length);
             T[] slice = new T[length];
 
             for (int i = 0; i < length; i++)

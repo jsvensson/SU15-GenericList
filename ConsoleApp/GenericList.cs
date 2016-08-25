@@ -35,7 +35,7 @@ namespace GenericList
             }
 
             T[] left = items.Slice(0, index - 1);
-            T[] right = items.Slice(index + 1, items.Length - 1);
+            T[] right = items.Slice(index + 1, items.Length-1 - index);
 
             T[] slicedItems = new T[items.Length - 1];
         
