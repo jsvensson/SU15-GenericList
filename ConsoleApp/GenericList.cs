@@ -54,20 +54,16 @@ namespace GenericList
 
         private void CheckCapacity(int size)
         {
-            do
+            // Initialize array
+            if (items == null)
             {
-                // Initialize array
-                if (items == null)
-                {
-                    items = new T[InitialSize];
-                }
+                items = new T[InitialSize];
+            }
 
-                // Already items in array?
-                if (items.Length < size)
-                {
-                    Array.Resize(ref items, items.Length * 2);
-                }
-            } while (items.Length < size);
+            while (items.Length < size)
+            {
+                Array.Resize(ref items, items.Length * 2);
+            }
         }
 
         public IEnumerator<T> GetEnumerator()
