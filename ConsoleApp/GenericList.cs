@@ -65,9 +65,7 @@ namespace GenericList
                 // Already items in array?
                 if (items.Length < size)
                 {
-                    var newItems = new T[items.Length * 2];
-                    Array.Copy(items, newItems, items.Length);
-                    items = newItems;
+                    Array.Resize(ref items, items.Length * 2);
                 }
             } while (items.Length < size);
         }
